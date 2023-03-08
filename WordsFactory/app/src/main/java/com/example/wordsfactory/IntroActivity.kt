@@ -45,7 +45,7 @@ class IntroActivity: AppCompatActivity() {
         TabLayoutMediator(pageIndicator, viewPager) { _, _ -> null }.attach()
 
         skipButton.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java) )
+            startActivity(Intent(this, SignupActivity::class.java) )
         }
 
         nextButton.setOnClickListener {
@@ -58,7 +58,7 @@ class IntroActivity: AppCompatActivity() {
                     nextButton.text = "Let's Start"
                 }
                 2 -> {
-                    startActivity(Intent(this, MainActivity::class.java) )
+                    startActivity(Intent(this, SignupActivity::class.java) )
                 }
             }
         }

@@ -11,4 +11,6 @@
     <color name="button_color">#E3562A</color>
     <color name="active">#65AAEA</color>
     <color name="page_default">#D5D4D4</color>
+    <color name="grey">#BEBAB3</color>
+    <color name="dark">#3C3A36</color>
 </resources>
