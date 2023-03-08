@@ -1,5 +1,6 @@
 package com.example.wordsfactory
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,9 +36,13 @@ class SignupActivity : AppCompatActivity() {
 
         signupButton.setOnClickListener {
             if( nameEditText.text.isNullOrEmpty() || emailEditText.text.isNullOrEmpty() || passwordEditText.text.isNullOrEmpty() ) {
-                Toast.makeText( this,
-                    "One or more fields are not filled out. Please check if all fields are filled in and try again.",
-                    Toast.LENGTH_LONG ).show()
+                AlertDialog.Builder( this )
+                    .setTitle( android.R.string.dialog_alert_title )
+                    .setMessage( "One or more fields are not filled out. Please check if all fields are filled in and try again." )
+                    .setPositiveButton( resources.getString( android.R.string.ok ) ) {
+                            dialog, _ -> dialog.cancel()
+                    }
+                    .show()
             } else {
                 startActivity( Intent( this, MainActivity::class.java ) )
             }
